@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    user-select: none;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(94, 92, 92, 0.212);
+}
+
+form{
+    width:25rem;
+    height: 30rem;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    overflow: hidden;
+}
+h3{
+    text-align: center;
+    font-size: 2rem;
+    color:teal;
+}
+input{
+    outline: none;
+    background: rgba(166, 240, 240, 0.103);
+    width: 60%;
+    font-size: 0.9rem;
+    caret-color: tomato;
+    padding: 0.5rem;
+    border: 1px solid rgba(40, 131, 131, 0.377);
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+input:focus{
+    color: teal;
+    border-color:teal;
+}
+button{
+    padding: 0.7rem;
+    width: 60%;
+    border: none;
+    outline: none;
+    background: tomato;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+p{
+    color: gray;
+}
+a{
+    color: tomato;
+}
+input:invalid{
+    border-color: brown;
+    color: brown;
+}
+.container{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+#sign-in,#sign-up{
+    position: absolute;
+}
+.active{
+    transform: rotate(-5deg);
+    z-index: 0;
+
+}
+div:not(.active){
+    transform: rotate(0);
+    z-index: 1;
+    animation: moving .3s ease-in-out;
+}
+
+
+
+@keyframes moving{
+    from{
+        transform:perspective(200px) rotateY(180deg);
+    }
+    to{
+        transform:perspective(200px) rotate(0); 
+    }
+}

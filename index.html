@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="sign-in" class="active">
+            <form action="#" method="post">
+                <h3>Sign In</h3>
+                <input type="email" autocomplete="true" placeholder="Email" value="" name="" id="lg-email">
+                <input type="password" minlength="5" maxlength="10" value="" autocomplete="true" placeholder="password" name="" id="lg-password">
+                <button  type="submit">Sign In</button>
+                <p>Don't have an account <a data-page="1" href="#sign-up">Create Account</a></p>
+            </form>
+        </div>
+
+        <div id="sign-up" >
+            <form action="#" method="post">
+                <h3>Sign Up</h3>
+                <input type="text" autocomplete="true" placeholder="Name" value="" name="" id="cr-name">
+                <input type="email" autocomplete="true" placeholder="Email" value="" name="" id="cr-email">
+                <input type="password" autocomplete="true" minlength="5" maxlength="10"  placeholder="password" value="" name="" id="cr-password">
+                <button type="submit">Sign Up</button>
+                <p>Already have an account <a data-page="2" href="#sign-in">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let sign_in=document.getElementById('sign-in');
+        let sign_up=document.getElementById('sign-up');
+
+        let a=document.querySelectorAll('a')
+
+        a.forEach(element => {
+           element.addEventListener("click",()=>{
+            let val=event.target.getAttribute("data-page");
+            if(val==1){
+                sign_in.classList.add("active");
+                sign_up.classList.remove("active");
+            }
+            else if(val==2){
+                sign_up.classList.add("active");
+                sign_in.classList.remove("active");
+            }
+            
+           })
+        });
+
+    </script>
+    
+</body>
+</html>
